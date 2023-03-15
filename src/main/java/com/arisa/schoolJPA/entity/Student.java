@@ -1,15 +1,11 @@
 package com.arisa.schoolJPA.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
 
 @Entity
-@NoArgsConstructor
-@Data
 @Table(name = "student")
 public class Student {
     @Id
@@ -26,4 +22,33 @@ public class Student {
     @ManyToMany(mappedBy = "studentRoster")
     private Set<Course> myClasses;
 
+    public Student() {}
+
+    public Student(Set<Course> myClasses) {
+        this.myClasses = myClasses;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
 }

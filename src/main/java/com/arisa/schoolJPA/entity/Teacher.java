@@ -8,8 +8,6 @@ import java.util.Set;
 
 
 @Entity
-@NoArgsConstructor
-@Data
 @Table(name = "teacher")
 public class Teacher {
     @Id
@@ -28,4 +26,44 @@ public class Teacher {
 
     @OneToMany(mappedBy = "courseTeacher")
     private Set<Course> teacherClasses;
+
+    public Teacher() {
+    }
+
+    //added constructor for teacherClasses
+    public Teacher(Set<Course> teacherClasses) {
+        this.teacherClasses = teacherClasses;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    public String getDept() {
+        return dept;
+    }
+
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
 }
