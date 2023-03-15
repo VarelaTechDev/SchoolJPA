@@ -7,3 +7,14 @@ POST localhost:8080/course/add
     "id": 1
   }
 }
+
+Edit A Course
+PUT localhost:8080/course/{id}
+{
+  "id": 4,
+  "courseName": "CS305",
+  "courseDesc": "Advanced Python - now with PyStats",
+  "courseTeacher": {
+    "id": 5
+  }
+}

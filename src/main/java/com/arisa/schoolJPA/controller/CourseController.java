@@ -40,6 +40,18 @@ public class CourseController {
         return new ResponseEntity<Void>(HttpStatus.CREATED);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Course> updateCourse(@PathVariable("id") Integer id, @RequestBody Course course) {
+        courseRepo.save(course);
+        return new ResponseEntity<Course>(course, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCourse(@PathVariable("id") Integer id) {
+        courseRepo.deleteById(id);
+        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
+
 
 
 }
