@@ -34,6 +34,12 @@ public class CourseController {
         return new ResponseEntity<Course>(course, HttpStatus.OK);
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<Void> addNewCourse(@RequestBody Course course){
+        courseRepo.save(course);
+        return new ResponseEntity<Void>(HttpStatus.CREATED);
+    }
+
 
 
 }

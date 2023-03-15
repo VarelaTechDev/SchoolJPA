@@ -1,0 +1,9 @@
+Add A Course
+POST localhost:8080/course/add
+{
+  "courseName": "CS248",
+  "courseDesc": "Intermediate Data Structures",
+  "courseTeacher": {
+    "id": 1
+  }
+}
